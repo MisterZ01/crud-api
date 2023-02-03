@@ -12,7 +12,7 @@ class Panneau extends Model
     protected $fillable = [
         'nom_panneau',
         'longitude',
-        'latidude',
+        'latitude',
     ];
 
     public function contrat(){

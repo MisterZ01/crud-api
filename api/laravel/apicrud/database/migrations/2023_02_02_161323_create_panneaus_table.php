@@ -16,12 +16,13 @@ return new class extends Migration
     {
         Schema::create('panneaus', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_contrat');
-            $table->date('dateDebut');
-            $table->date('dateFin');
+            $table->string('nom_panneau')->nullable();
+            $table->string('longitude');
+            $table->string('latidude');
+            
             $table->timestamps();
             // cle etrangere 
-            $table->foreignId('contrat_id')->constrained();
+            $table->foreignId('contrat_id')->constrained()->nullable();
 
         });
     }

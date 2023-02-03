@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('contrats', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_panneau');
-            $table->string('longitude');
-            $table->string('latidude');
+            $table->string('nom_contrat');
+            $table->date('dateDebut');
+            $table->date('dateFin');
             $table->timestamps();
             // cle etrangere 
             $table->foreignId('client_id')->constrained();
