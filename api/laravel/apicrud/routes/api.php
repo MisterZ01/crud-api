@@ -21,6 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::apiResource('posts',PostController::class);
+
 Route::apiResource('clients',ClientController::class);
 Route::apiResource('contrats',ContratController::class);
 Route::apiResource('panneaus',PanneauController::class);

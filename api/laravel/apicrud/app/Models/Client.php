@@ -14,7 +14,7 @@ class Client extends Model
         'prenom_client',
         'email_client',
         'entreprise_client',
-        'password_client',
+        'password_client'
     ];
 
     public function contrats(){

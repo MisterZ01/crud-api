@@ -37,11 +37,17 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePostRequest $request)
+    public function store(Request $request)
     {
-        $posts = Post::create($request->all());
-        
-        return new PostResource($posts);
+        // $posts = Post::create($request->all());
+        return [
+            $request->title,
+            $request->description,
+            $request->created_at,
+            $request->updated_at
+        ];
+
+
     }
 
     /**
@@ -50,7 +56,7 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    
+
     // methode get sur la route /posts/id
     public function show(Post $post)
     {
@@ -78,7 +84,7 @@ class PostController extends Controller
     public function update(StorePostRequest $request, Post $post)
     {
         $post->update($request->all());
-        
+
         // return new PostResource($post);
         return "fonction update";
     }

@@ -14,7 +14,7 @@ class ClientResource extends JsonResource
      */
     public function toArray($request)
     {
-        return response()->json([
+        return [
             "id"=> $this->id,
             "nom_client"=> $this->nom_client,
             "prenom_client"=> $this->prenom_client,
@@ -22,6 +22,6 @@ class ClientResource extends JsonResource
             "entreprise_client"=> $this->entreprise_client,
             "created_at"=> $this->created_at,
             "updated_at"=> $this->updated_at
-        ]);
+        ];
     }
 }

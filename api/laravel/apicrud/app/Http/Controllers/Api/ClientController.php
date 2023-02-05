@@ -7,6 +7,7 @@ use App\Http\Resources\ClientResource;
 use App\Http\Requests\StoreClientRequest;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
@@ -28,7 +29,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -39,9 +40,11 @@ class ClientController extends Controller
      */
     public function store(StoreClientRequest $request)
     {
-        $clients = Client::create($request->all());
-        
-        return new ClientResource($clients);
+
+        $client = Client::create($request->all());
+
+        return new ClientResource($client);
+
     }
 
     /**
@@ -64,8 +67,8 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        $clientedit = Client::find($client);
-        return $clientedit;
+        // $clientedit = Client::find($client);
+        return "la fonction edit";
     }
 
     /**
@@ -75,10 +78,10 @@ class ClientController extends Controller
      * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request, int $client)
     {
         Client::where('id', $client)->update($request->all());
-        return redirect('clients');
+        return "mise à jour ok";
     }
 
     /**
@@ -87,8 +90,9 @@ class ClientController extends Controller
      * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Client $client)
+    public function destroy(int $client)
     {
-        //
+        DB::table('clients')->where('id',  $client)->delete();
+        return json_encode("Client supprimé avec succès");
     }
 }
