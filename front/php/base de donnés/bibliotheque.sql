@@ -15,7 +15,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de données : `bibliotheque`
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `classe` (
   `codeCl` varchar(10) NOT NULL,
   `LibelleCl` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`codeCl`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `classe`
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `emprunter` (
   `dateRetour` date DEFAULT NULL,
   PRIMARY KEY (`matricule`,`codeL`),
   KEY `FK_LIVRE_EMPRUNT` (`codeL`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `emprunter`
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
   `codeCl` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`matricule`),
   KEY `FK_ETUDIANT_CLASSE` (`codeCl`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `etudiant`
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `livre` (
   `genre` varchar(30) DEFAULT NULL,
   `dateCreation` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`codeL`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `livre`

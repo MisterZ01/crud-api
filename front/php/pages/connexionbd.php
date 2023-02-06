@@ -3,7 +3,7 @@ try {
 
     $servername = 'localhost';
     $username = 'root';
-    $password = '';
+    $password = "root";
     $conn = new PDO("mysql:host=$servername;dbname=bibliotheque", $username, $password);
  }
  catch(PDOException $e){

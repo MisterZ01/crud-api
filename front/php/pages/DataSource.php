@@ -17,7 +17,7 @@ class DataSource
 
     const USERNAME = 'root';
 
-    const PASSWORD = '';
+    const PASSWORD = 'root';
 
     const DATABASENAME = 'bibliotheque';
 
