@@ -17,7 +17,7 @@
 <body>
     <?php
         include('header.php');
-        include('recupbd.php');
+        include('gestionclientback.php');
 
 
         ?>
@@ -37,17 +37,17 @@
                     <th scope="col">Actions</th>
                 </tr>
                 </thead>
-                <tbody>
-                <?php foreach( $livresempruntes as $livresemprunte):     ?>
+                <tbody> 
+                <?php echo $clients;foreach( $clients as $client):     ?>
                      <tr>
-                            <td> <?php echo$livresemprunte["codeL"]?> </td>
-                            <td> <?php echo$livresemprunte["matricule"]?></td>
-                            <td> <?php echo$livresemprunte["dateSortie"]?></td>
-                            <td><?php echo$livresemprunte["dateRetour"]?></td>
+                            <td> <?php echo$client["nom_client"]?> </td>
+                            <td> <?php echo$client["prenom_client"]?></td>
+                            <td> <?php echo$client["dateSortie"]?></td>
+                            <td><?php echo$client["dateRetour"]?></td>
 
                             <td>
                                 <?php
-                                 echo ' <form action="supprimeremprunt.php" method="POST"><input type="hidden"  name="codeL" value='.$livresemprunte["codeL"].' >
+                                 echo ' <form action="supprimeremprunt.php" method="POST"><input type="hidden"  name="codeL" value='.$client["codeL"].' >
                                 <input type="submit" class="btn btn-success"  name="del" value="Déposer"></form> '
                                 ?>
                             </td>

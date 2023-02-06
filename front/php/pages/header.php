@@ -48,6 +48,14 @@
                         <a href="enmpruntparperiode.php" class="dropdown-item">Liste des emprunts par periode</a>
                     </div>
                 </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Gestion panneaux</a>
+                    <div class="dropdown-menu">
+                        <a href="gestionclient.php" class="dropdown-item"> lecture et suppression clients </a>
+                        <a href="gestioncontrat.php" class="dropdown-item">lecture et suppression contrats</a>
+                        <a href="gestionpanneau.php" class="dropdown-item">lecture et suppression panneaus</a>
+                    </div>
+                </div>
 
             </div>
             <div style="margin-left: 60%; background-color:red; color:aliceblue; text-decoration:none;">

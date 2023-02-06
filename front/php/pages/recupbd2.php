@@ -5,7 +5,7 @@ try{
     //On se connecte à la BDD
     $servername = 'localhost';
     $username = 'root';
-    $password = '';
+    $password = 'root';
     $conn = new PDO("mysql:host=$servername;dbname=bibliotheque", $username, $password);
 
     //On recupere les classes dans la base de données
