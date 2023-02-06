@@ -1,0 +1,6 @@
+Je suis COULIBALY ZOUMANA SITW1
+
+1- importer les base de données sql
+2- la page de connexion est la page index.php
+3- vous pouvez creer un bibliotécaire puis vous connecter en cliquant sur INSCRIRE
+4- un agent deja enregistré est : utilisateur=coulibaly et Mot de passe=12345678
