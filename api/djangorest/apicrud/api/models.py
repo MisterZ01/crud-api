@@ -12,11 +12,11 @@ class Item(models.Model):
 
 # date création et date de mise à jour
 class timestampe(models.Model):
-    created_at = models.DateTimeField()
-    update_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     # definition de classe abstraite
     class Meta:
-        abstract = True
+        abstract = True 
 
 # classe de clients
 
@@ -27,10 +27,12 @@ class Client(timestampe):
     email_client = models.TextField(max_length=50)
     numero_client = models.TextField(max_length=10)
     # entreprise ou organisation
-    nomEntreprise_client = models.TextField(max_length=255)
-    logoEntreprise_client = models.TextField(max_length=255)
-    emailEntreprise_client = models.TextField(max_length=255)
-    numeroEntreprise_client = models.TextField(max_length=255)
+    # nomEntreprise_client = models.TextField(max_length=255)
+    # logoEntreprise_client = models.TextField(max_length=255)
+    # emailEntreprise_client = models.TextField(max_length=255)
+    # numeroEntreprise_client = models.TextField(max_length=255)
+    def __str__(self) -> str:
+        return self.name
 
 # classe des Contrats
 
