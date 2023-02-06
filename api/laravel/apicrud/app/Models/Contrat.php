@@ -14,6 +14,7 @@ class Contrat extends Model
         'nom_contrat',
         'dateDebut',
         'dateFin',
+        'client_id'
 
     ];
     public function client(){
@@ -22,5 +23,5 @@ class Contrat extends Model
     public function panneaus(){
         return $this->hasMany(Panneau::class);
     }
-    
+
 }

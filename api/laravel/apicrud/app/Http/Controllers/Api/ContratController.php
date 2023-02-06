@@ -7,6 +7,7 @@ use App\Models\Contrat;
 use App\Http\Resources\ContratResource;
 use App\Http\Requests\StoreContratRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ContratController extends Controller
 {
@@ -37,11 +38,19 @@ class ContratController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreContratRequest $request)
+    public function store(Request $request)
     {
-        $contrats = Contrat::create($request->all());
-        
-        return new ContratResource($contrats);
+        Contrat::create($request->all());
+
+        // return new ContratResource($contrats);
+        // DB::table('contrats')->insert([
+        //     "nom_contrat"=> $request->nom_contrat,
+        //     "dateDebut"=> $request->dateDebut,
+        //     "dateFin"=> $request->dateFin,
+        //     "client_id"=> $request->client_id
+
+        // ]);
+        return json_encode("ooooook contrat store");
     }
 
     /**
@@ -50,7 +59,7 @@ class ContratController extends Controller
      * @param  \App\Models\Contrat  $contrat
      * @return \Illuminate\Http\Response
      */
-    public function show(Contrat $contrat)
+    public function show(int $contrat)
     {
         $contratdetail = Contrat::find($contrat);
         return $contratdetail;
@@ -87,8 +96,9 @@ class ContratController extends Controller
      * @param  \App\Models\Contrat  $contrat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contrat $contrat)
+    public function destroy(int $contrat)
     {
-        //
+        DB::table('contrats')->where('id',  $contrat)->delete();
+        return json_encode("Contrat supprimé avec succès");
     }
 }

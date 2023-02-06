@@ -19,6 +19,7 @@ class ContratResource extends JsonResource
             "nom_contrat"=> $this->nom_contrat,
             "dateDebut"=> $this->dateDebut,
             "dateFin"=> $this->dateFin,
+            "client_id"=> $this->client_id,
             "created_at"=> $this->created_at,
             "updated_at"=> $this->updated_at
         ];
