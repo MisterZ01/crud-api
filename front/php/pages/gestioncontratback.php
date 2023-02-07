@@ -2,15 +2,15 @@
 
 // recuperation des donnees
 
-$clients = json_decode(file_get_contents('http://127.0.0.1:8000/api/client/all'));
+$contrats = json_decode(file_get_contents('http://127.0.0.1:8000/api/contrat/all'));
 
 // suppression des donnees
 
 if(isset($_POST['supprimer'])){
     
-    $data = $_POST['id_client'];
-    $url = "http://127.0.0.1:8000/api/client/delete/".$data;
-    // $result = CallAPI('DELETE', "client/delete/", $data);
+    $data = $_POST['id_contrat'];
+    $url = "http://127.0.0.1:8000/api/contrat/delete/".$data;
+    // $result = CallAPI('DELETE', "contrat/delete/", $data);
     // var_dump($result);
     // die();
     // curl_del($path);
@@ -26,7 +26,7 @@ if(isset($_POST['supprimer'])){
   
     curl_close($ch);
   
-    header('location:gestionclient.php');
+    header('location:gestioncontrat.php');
 
 
 
@@ -86,10 +86,10 @@ if(isset($_POST['supprimer'])){
 // $rest_api_base_url = 'http://127.0.0.1:8000/api/';
 
 // //GET - list of users
-// $get_endpoint = 'client/all';
+// $get_endpoint = 'contrat/all';
 
 // $response = perform_http_request('GET', $rest_api_base_url . $get_endpoint);
-// $clients = $response ;
+// $contrats = $response ;
 
 // foreach( $el as $response ){
 //     echo '$el' . "\n";
@@ -98,14 +98,14 @@ if(isset($_POST['supprimer'])){
 
 
 
-// $url = 'http://127.0.0.1:8000/api/client/all';
+// $url = 'http://127.0.0.1:8000/api/contrat/all';
 
 // $ch = curl_init($url);
 // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-// $clients = curl_exec($ch);
-// $clients = json_decode($clients);
+// $contrats = curl_exec($ch);
+// $contrats = json_decode($contrats);
 
-// var_dump($clients[0]);
+// var_dump($contrats[0]);
 // curl_close($ch);
 
 

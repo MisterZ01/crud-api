@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Gestion de bibliothèque</title>
+    <title>Gestion des panneaux</title>
     <link rel="stylesheet" href="fichiers/css/bootstrap.min.css">
     <link rel="stylesheet" href="fichiers/css/style.css">
     <script src="fichiers/js/bootstrap.min.js"></script>
@@ -17,12 +17,13 @@
 <body>
     <?php
         include('header.php');
+        include('gestioncontratback.php');
         // include('recupbd.php');
 
 
         ?>
     <div class="text-center">
-        <p>La liste des livres empruntés</p>
+        <p>La liste des contrats </p>
     </div>
  <div class="container text-center justify-content-center">
         <div class="row">
@@ -30,24 +31,21 @@
             <table class="table table-bordered"  id="matable">
                 <thead>
                 <tr>
-                    <th scope="col">Nom du client</th>
-                    <th scope="col">Prenom du client</th>
-                    <th scope="col">Numero du client</th>
-                    <th scope="col">email du client</th>
+                    <th scope="col">date de debut du contrat</th>
+                    <th scope="col">date de fin du contrat</th>
+                    <th scope="col">contractant</th>
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach( $clients[0] as $client):     ?>
+                <?php foreach( $contrats as $contrat ):     ?>
                      <tr>
-                            <td> <?php echo$client["nom_client"]?> </td>
-                            <td> <?php echo$client["prenom_client"]?></td>
-                            <td> <?php echo$client["numero_client"]?></td>
-                            <td><?php echo$client["email_client"]?></td>
-
+                            <td> <?= $contrat->dateDebut_contrat ?> </td>
+                            <td> <?= $contrat->dateFin_contrat ?></td>
+                            <td> <?= $contrat->contractant ?></td>
                             <td>
                                 <?php
-                                 echo ' <form action="gestionclientback.php" method="POST"><input type="hidden"  name="id_client" value='.$client["id"].' >
+                                 echo ' <form action="gestioncontratback.php" method="POST"><input type="hidden"  name="id_contrat" value='.$contrat->id.' >
                                 <input type="submit" class="btn btn-success"  name="supprimer" value="supprimer"></form> '
                                 ?>
                             </td>

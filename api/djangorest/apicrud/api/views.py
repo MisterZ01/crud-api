@@ -29,7 +29,7 @@ def Contrat_store(request):
     # validating for already existing data
     if Contrat.objects.filter(**request.data).exists():
         raise serializers.ValidationError('existe déjà')
-  
+    print(contrat.is_valid(), contrat.errors)
     if contrat.is_valid():
         contrat.save()
         return Response(contrat.data)
@@ -39,13 +39,13 @@ def Contrat_store(request):
 @api_view(['GET'])
 def Contrat_view(request):
     
-    # checking for the parameters from the URL
+        # checking for the parameters from the URL
     if request.query_params:
         contrats = Contrat.objects.filter(**request.query_param.dict())
     else:
         contrats = Contrat.objects.all()
   
-    # if there is something in Contrats else raise error
+    # if there is something in contrats else raise error
     if contrats:
         serializer = ContratSerializer(contrats, many=True)
         return Response(serializer.data)
@@ -56,7 +56,7 @@ def Contrat_view(request):
 def Contrat_update(request, pk):
     contrat = Contrat.objects.get(pk=pk)
     data = ContratSerializer(instance=contrat, data=request.data)
-    print(data.is_valid(), data.errors)
+  
     if data.is_valid():
         data.save()
         return Response(data.data)

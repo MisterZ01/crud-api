@@ -8,6 +8,7 @@ use App\Http\Requests\StoreClientRequest;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
 
 class ClientController extends Controller
 {
@@ -43,8 +44,12 @@ class ClientController extends Controller
 
         $client = Client::create($request->all());
 
-        return new ClientResource($client);
-
+        // return new ClientResource($client);
+        $data = array(
+            'status'=> 'success',
+            'message'=> 'Le client est enrégistré avec succès'
+        );
+        return Response::json($data);
     }
 
     /**

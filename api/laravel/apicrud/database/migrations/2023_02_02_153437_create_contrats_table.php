@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('dateFin');
             $table->timestamps();
             // cle etrangere 
-            $table->foreignId('client_id')->constrained();
+            $table->foreignId('client_id')->constrained()->onDelete('cascade');
         });
     }
 

@@ -6,10 +6,10 @@ class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
         fields = ('category', 'subcategory', 'name', 'amount')
-class ClientSerializer(serializers.HyperlinkedModelSerializer):
+class ClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
-        fields = ('nom_client','prenom_client','email_client','numero_client')
+        fields = ('id','nom_client','prenom_client','email_client','numero_client')
             # entreprise ou organisation
             # 'nomEntreprise_client',
             # 'logoEntreprise_client',
@@ -19,6 +19,7 @@ class ContratSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contrat
         fields = (
+                'id',
                 'dateDebut_contrat',
                 'dateFin_contrat',
                 'contractant'

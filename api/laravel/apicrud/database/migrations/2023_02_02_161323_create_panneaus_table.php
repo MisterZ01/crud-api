@@ -22,7 +22,7 @@ return new class extends Migration
             
             $table->timestamps();
             // cle etrangere 
-            $table->foreignId('contrat_id')->constrained()->nullable();
+            $table->foreignId('contrat_id')->constrained()->nullable()->onDelete('cascade');
 
         });
     }
