@@ -17,7 +17,7 @@
 <body>
     <?php
         include('header.php');
-        include('recupbd.php');
+        // include('recupbd.php');
 
 
         ?>
@@ -30,25 +30,25 @@
             <table class="table table-bordered"  id="matable">
                 <thead>
                 <tr>
-                    <th scope="col">code livre</th>
-                    <th scope="col">matricule emprunteur</th>
-                    <th scope="col">Date de sortie</th>
-                    <th scope="col">Date de retour</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col">Nom du client</th>
+                    <th scope="col">Prenom du client</th>
+                    <th scope="col">Numero du client</th>
+                    <th scope="col">email du client</th>
+                    <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach( $livresempruntes as $livresemprunte):     ?>
+                <?php foreach( $clients[0] as $client):     ?>
                      <tr>
-                            <td> <?php echo$livresemprunte["codeL"]?> </td>
-                            <td> <?php echo$livresemprunte["matricule"]?></td>
-                            <td> <?php echo$livresemprunte["dateSortie"]?></td>
-                            <td><?php echo$livresemprunte["dateRetour"]?></td>
+                            <td> <?php echo$client["nom_client"]?> </td>
+                            <td> <?php echo$client["prenom_client"]?></td>
+                            <td> <?php echo$client["numero_client"]?></td>
+                            <td><?php echo$client["email_client"]?></td>
 
                             <td>
                                 <?php
-                                 echo ' <form action="supprimeremprunt.php" method="POST"><input type="hidden"  name="codeL" value='.$livresemprunte["codeL"].' >
-                                <input type="submit" class="btn btn-success"  name="del" value="Déposer"></form> '
+                                 echo ' <form action="gestionclientback.php" method="POST"><input type="hidden"  name="id_client" value='.$client["id"].' >
+                                <input type="submit" class="btn btn-success"  name="supprimer" value="supprimer"></form> '
                                 ?>
                             </td>
 
