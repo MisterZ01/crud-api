@@ -46,7 +46,7 @@
                             <td>
                                 <?php
                                  echo ' <form action="gestioncontratback.php" method="POST"><input type="hidden"  name="id_contrat" value='.$contrat->id.' >
-                                <input type="submit" class="btn btn-success"  name="supprimer" value="supprimer"></form> '
+                                <input type="submit" class="btn btn-danger"  name="supprimer" value="supprimer"></form> '
                                 ?>
                             </td>
 

@@ -48,7 +48,7 @@
                             <td>
                                 <?php
                                  echo ' <form action="supprimeremprunt.php" method="POST"><input type="hidden"  name="codeL" value='.$livresemprunte["codeL"].' >
-                                <input type="submit" class="btn btn-success"  name="del" value="Déposer"></form> '
+                                <input type="submit" class="btn btn-danger"  name="del" value="Déposer"></form> '
                                 ?>
                             </td>
 

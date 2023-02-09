@@ -1,0 +1,22 @@
+
+---------------------------------------------------*********-------------------------------------
+			INSTRUCTIONS POUR LA BONNE EXECUTION DU PROJET
+---------------------------------------------------*********-------------------------------------
+
+		1- immorter la base de données apitest.sql
+
+		2- lancer l'api Laravel ( à lancer sur port 8000 )
+ 
+		3- lancer l'api nodejs  ( à lancer sur port 9000 ) 
+
+		**ces api vont alimenter la vue avec les données
+
+		4- lancer la vue Principale (en django), a lancer sur le port 3000
+
+		5- tester aussi la vue(front) php ( l'onglet gestion des panneaux) , mais avant cela, lancer l'api djangorest sous le port 8000
+
+---------------------------------------------------*********-------------------------------------
+Les api sont aussi disponible sur git :
+
+https://github.com/MisterZ01/crud-api.git
+---------------------------------------------------FIN-------------------------------------------

@@ -12,7 +12,6 @@
      <script src="fichiers/js/bootstrap.min.js"></script>
      <script src="fichiers/js/javascript.js"></script>
 
-
 </head>
 
 <body>
@@ -26,21 +25,56 @@
             <div class="navbar-nav">
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">parametrage</a>
-
+                    <div class="dropdown-menu">
+                        <a href="liste-classe.php" class="dropdown-item">Classe</a>
+                        <a href="liste-livre.php" class="dropdown-item">Livre</a>
+                        <a href="importation.php" class="dropdown-item">Importation</a>
+                    </div>
                 </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">saisie</a>
-
+                    <div class="dropdown-menu">
+                        <a href="inscription.php" class="dropdown-item">Inscription</a>
+                        <a href="emprunt.php" class="dropdown-item">Emprunt de livre</a>
+                        <a href="liste-depot.php" class="dropdown-item">Depot de livre</a>
+                    </div>
                 </div>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">edition</a>
-
+                    <div class="dropdown-menu">
+                        <a href="Listedesclasse.php" class="dropdown-item">Liste de classe</a>
+                        <a href="livreparauteur.php" class="dropdown-item">Livre par auteur</a>
+                        <a href="enmpruntparperiode.php" class="dropdown-item">Liste des emprunts par periode</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Gestion panneaux</a>
+                    <div class="dropdown-menu">
+                        <a href="pages/gestionclient.php" class="dropdown-item"> lecture et suppression clients </a>
+                        <a href="pages/gestioncontrat.php" class="dropdown-item">lecture et suppression contrats</a>
+                        <a href="pages/gestionpanneau.php" class="dropdown-item">lecture et suppression panneaus</a>
+                    </div>
                 </div>
 
             </div>
-
+            <div style="margin-left: 60%; background-color:red; color:aliceblue; text-decoration:none;">
+                    <a style="background-color:red; color:aliceblue; text-decoration:none;" class="nav-link" href="auth/deconnexion.php" >Se déconnecter</a>
+                </div>
         </div>
     </nav>
 </body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#matable').DataTable( {
+            search: {
+                return: true
+            },
+            select: true,
+            language: {
+                url:"fichiers/dt/datatables.french.js",
 
+            }
+        } );
+    } );
+</script>
 </html>
